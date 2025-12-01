@@ -7,16 +7,17 @@ const Footer = () => {
       <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
         <div>
             <img src={assets.logo} alt="" className='w-32 mb-5'/>
-            <p className='w-full md:w-2/3 text-gray-600'>Lorem Ipsum is sinply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of the type and scrambled it yo make a type specimen book.</p>
+            <p className='w-full md:w-2/3 text-gray-600'>At Forever, we believe great design should be simple, lasting, and effortless.
+We create products that match your lifestyle — modern, functional, and made to stay with you for the long run.
+Inspired by everyday moments, built with care, and designed to be worn, used, and loved — forever.</p>
         </div>
         <div>
             <p className='text-xl font-medium mb-5'>COMPANY</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
-                <li>Home</li>
-                <li>About us</li>
-                <li>Delivery</li>
-                <li>Privacy policy</li>
+                <li className='cursor-pointer'>Home</li>
+                <li className='cursor-pointer'>About us</li>
+                <li className='cursor-pointer'>Delivery</li>
+                <li className='cursor-pointer'>Privacy policy</li>
             </ul>
 
         </div>
