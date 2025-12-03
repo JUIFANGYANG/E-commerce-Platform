@@ -14,10 +14,11 @@ const Navbar = () => {
 
   return (
     
-    <div className='flex items-center justify-between py-5 font-medium sticky top-0 z-50 bg-white'>
+    <div className={`flex items-center justify-between py-5 font-medium sticky bg-transparent top-0 z-50`}>
       
-      <img src={assets.logo} className='w-36' alt="Forever_logo" /> 
-    
+      <Link to='/' >
+        <img src={assets.logo} className='w-36 cursor-pointer' alt="Forever_logo" />
+      </Link>
 
       <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
         
@@ -40,14 +41,13 @@ const Navbar = () => {
         </ul>
 
         <div className='flex items-center gap-6'>
-            <img onClick={()=>setShowSearch(true)} src={assets.search_icon} alt="" className='cursor-pointer w-5'/>
-            
+            <Link to ='/collection'><img onClick={()=>setShowSearch(true)} src={assets.search_icon} alt="" className='cursor-pointer w-5'/></Link>
             <div className='group relative'>
               <Link to ='/login'><img src={assets.profile_icon} alt="" className='cursor-pointer w-5'/></Link>
               <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
                  <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-gray-100 text-gray-500'>
-                  <p className='cursor-pointer hover:text-black'>My Orders</p>
-                  <p className='cursor-pointer hover:text-black'>Logout</p>
+                  <NavLink to="/orders"><p className='cursor-pointer hover:text-black'>My Orders</p></NavLink>
+                  <NavLink to="/login"><p className='cursor-pointer hover:text-black'>Logout</p></NavLink>
                  </div>
               </div>
             </div>

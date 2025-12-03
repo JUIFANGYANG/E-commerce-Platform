@@ -11,8 +11,8 @@ const Contact = () => {
       </div>
 
       <div className='flex flex-col justify-center md:flex-row my-10 gap-10 mb-28'>
-        <img className='w-full md:max-w-[450px]' src={assets.contact_img} alt="" />
-        <div className='flex flex-col gap-6  justify-center items-start p-10'>
+        <img className='w-3/4 max-w-[450px] mx-auto *:md:max-w-[450px] md:mx-0' src={assets.contact_img} alt="" />
+        <div className='flex flex-col gap-6 justify-center items-start p-10'>
           <p className='font-semibold text-xl text-gray-600'>Our Stroe</p>
           <p className='text-gray-500'>54709 Willms Station <br/> Suite 35, Washington, USA</p>
           <p className='text-gray-500'>Tel:(415)555415555-0132 <br/> Email:admin@forever.com</p>

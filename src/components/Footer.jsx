@@ -1,5 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { Link, NavLink } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -14,10 +15,9 @@ Inspired by everyday moments, built with care, and designed to be worn, used, an
         <div>
             <p className='text-xl font-medium mb-5'>COMPANY</p>
             <ul className='flex flex-col gap-1 text-gray-600'>
-                <li className='cursor-pointer'>Home</li>
-                <li className='cursor-pointer'>About us</li>
-                <li className='cursor-pointer'>Delivery</li>
-                <li className='cursor-pointer'>Privacy policy</li>
+                <Link to="/">Home</Link>
+                <Link to="/about">About us</Link>
+                <Link to="/about#privacy">Privacy policy</Link>
             </ul>
 
         </div>

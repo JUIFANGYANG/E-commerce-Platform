@@ -161,18 +161,3 @@ const Collection = () => {
 
 export default Collection
 
-//usestate(true/false)跟usestate([empty array])這兩個用法差別在哪，使用情境為何
-//flex-1? = css的 flex: 1 1 0% 佔滿剩餘空間 可縮可長
-//min-w-60約等於240px怎換算
-//filter 的gap-2意義？
-//為何加了flex後gap-2才有反應？
-//為何他沒有特地分比例？
-//三元運算子？but usestate(false) ${showFilter ? '':'hidden'} sm:block`
-
-//篩選器怎麼寫：
-//usestate
-// //這個可以再測試一次  useEffect(()=>{
-//       console.log(subCategory);
-//     },[subCategory])
-
-//為何要togglecategory先整理好陣列之後，再用applyFilter來重新調整真的渲染畫面

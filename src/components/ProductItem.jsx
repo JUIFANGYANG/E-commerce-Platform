@@ -19,6 +19,3 @@ const ProductItem = ({id, image, name, price}) => {
 }
 
 export default ProductItem
-
-// <Link to={`/products/${id}`}>
-// <img src={image[0]} alt="" />
