@@ -1,12 +1,34 @@
-# React + Vite
+# Forever E-commerce Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🟢 Featured Project | React & Front-end Focus
 
-Currently, two official plugins are available:
+This is a React-based e-commerce website that I developed as my main front-end portfolio project.
+The project started as a tutorial-based learning exercise, and I have been continuously improving it by adding my own features, optimizations, and design adjustments. Currently, at least 10% of the code and logic is my own work, and I plan to increase it further as I refine the project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+- Browse products and categories with dynamic UI
+- Add to cart, update quantities, and remove items
+- Cart summary with subtotal calculation
+- Responsive design optimized for mobile and desktop
+- User-friendly interface with smooth interactions
 
-## Expanding the ESLint configuration
+## Tech Stack
+- React
+- JavaScript (ES6+)
+- CSS / Tailwind CSS
+- Local state management
+- Deployed with Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Learning & Improvement Notes
+- Refactored tutorial code to improve component structure and readability
+- Practiced handling state and props in React
+- Improved UI/UX based on personal design preferences
+- Planning to further add custom features and optimizations to make this project fully my own
+
+## Demo
+[Live Demo](https://e-commerce-forever-silk.vercel.app/)
+
+---
+
+**Note:** This project represents my growth from following tutorials to creating and refining a React application. It demonstrates my current front-end skills and readiness for junior front-end roles.
+
