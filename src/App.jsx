@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
@@ -12,14 +12,31 @@ import Orders from './pages/Orders'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
+import SideCart from './components/SideCart'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ShopContextProvider from './context/ShopContext';
+
 
 const App = () => {
+  const [cartVisible, setCartVisible] = useState(false);
+  const closeCart = () => setCartVisible(false);
+  
+
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+    <ShopContextProvider setCartVisible={setCartVisible}>
+        {cartVisible && (
+        <div onClick={closeCart} className='fixed inset-0 bg-black/40 backdrop-blur-sm z-50'></div>
+        )}
+        <div className={`fixed bg-white right-0 top-0 bottom-0 z-[60] transition-all duration-300 w-full sm:w-2/5 ${cartVisible? 'translate-x-0':'translate-x-full'}`}>
+        <SideCart closeCart={closeCart}/>
+      </div>
+      <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
         <ToastContainer/>
-        <Navbar/>
+        <Navbar
+          cartVisible={cartVisible}
+          setCartVisible={setCartVisible}
+          closeCart={closeCart}/>
         <SearchBar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -34,6 +51,7 @@ const App = () => {
         </Routes>
         <Footer/>
     </div>
+    </ShopContextProvider>
   )
 }
 

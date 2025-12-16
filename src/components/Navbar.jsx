@@ -1,16 +1,15 @@
 import React, { useContext, useState } from 'react'
-import { assets } from '../assets/assets'
+import { assets, products } from '../assets/assets'
 import { Link, NavLink } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 
 
-
-const Navbar = () => {
+const Navbar = ({setCartVisible}) => {
 
   const [visible, setVisible]= useState(false);
-  const {setShowSearch, getCartCount} = useContext(ShopContext);
+  const {cartItems,setCartItems, setShowSearch, getCartCount} = useContext(ShopContext);
 
-
+  
 
   return (
     
@@ -45,21 +44,22 @@ const Navbar = () => {
             <div className='group relative'>
               <Link to ='/login'><img src={assets.profile_icon} alt="" className='cursor-pointer w-5'/></Link>
               <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
-                 <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-gray-100 text-gray-500'>
-                  <NavLink to="/orders"><p className='cursor-pointer hover:text-black'>My Orders</p></NavLink>
-                  <NavLink to="/login"><p className='cursor-pointer hover:text-black'>Logout</p></NavLink>
+                 <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-gray-100 text-gray-500'>         
+                  <Link to="/login"><p className='cursor-pointer hover:text-black'>Login</p></Link>
                  </div>
               </div>
             </div>
-
-            <Link to='/cart' className='relative'>
+            
+            {/* SideCart window */}
+            <div onClick={()=>setCartVisible(true)} className='relative cursor-pointer'>
             <img src={assets.cart_icon} alt="" className='cursor-pointer w-5 min-w-5'/>
             <p className='absolute right-0 bottom-0 w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]'>{getCartCount()}</p>
-            </Link>
+            </div>
+
             <img onClick={()=> setVisible(true)} src={assets.menu_icon} alt="" className='w-5 cursor-pointer block sm:hidden'/>
         </div>
                {/* {Sidebar menu for small screen} */}
-               <div className={`fixed inset-0 z-50 overflow-hidden bg-white transition-all ${visible ? 'w-full' :'w-0'}`} >
+               <div className={`fixed top-0 bottom-0 right-0 z-50 overflow-hidden bg-white transition-all ${visible ? 'w-full' :'w-0'}`} >
                  <div className='flex flex-col text-gray-600'>
                    <div onClick={()=>setVisible(false)} className='flex items-center gap-5 p-3 cursor-pointer'> 
                    <img className='h-4 rotate-180' src={assets.dropdown_icon} alt=""/>

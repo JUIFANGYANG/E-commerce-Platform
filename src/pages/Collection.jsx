@@ -10,7 +10,7 @@ const Collection = () => {
     const [showFilter,setShowFilter] = useState(false);
     const [filterProducts,setFilterProducts]= useState([]);
     const [category, setCategory] = useState([]);
-    const [subCategory, setSubcategory] = useState([]);
+    const [subCategory, setSubCategory] = useState([]);
     const [sortType, setSortType] = useState('relavent')
 
     const toggleCategory = (e) => {
@@ -23,12 +23,12 @@ const Collection = () => {
       }
     };
 
-    const toggleSubcategory = (e) =>{
-      if (category.includes(e.target.value)) {
-        setCategory(prev =>prev.filter(item => item !== e.target.value))
+    const toggleSubCategory = (e) =>{
+      if (subCategory.includes(e.target.value)) {
+        setSubCategory(prev =>prev.filter(item => item !== e.target.value))
       }
       else {
-        setCategory(prev => [...prev, e.target.value])
+        setSubCategory(prev => [...prev, e.target.value])
       }
     }
 
@@ -59,7 +59,7 @@ const Collection = () => {
           break;
 
           case'high-low':
-          setFilterProducts(fpcopy.sort((a,b)=>(b.price - a.price)));
+          setFilterProducts(fpCopy.sort((a,b)=>(b.price - a.price)));
           break;
 
           default:
@@ -72,7 +72,7 @@ const Collection = () => {
       setFilterProducts(products)
     },[])
 
-    useEffect(() => {
+    useEffect(()=>{
       applyFilter();
     },[category,subCategory,search,showSearch])
 
@@ -93,15 +93,15 @@ const Collection = () => {
         <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '':'hidden'} sm:block`}>
             <p className='mb-3 text-sm font-medium'>CATEGORIES </p>
                <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-                 <p className='flex gap-2'>
+                 <label className='flex gap-2'>
                   <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory}/>Men
-                  </p>
-                  <p className='flex gap-2'>
+                  </label>
+                  <label className='flex gap-2'>
                   <input className='w-3' type="checkbox" value={'Women'} onChange={toggleCategory}/>Women
-                  </p>
-                  <p className='flex gap-2'>
+                  </label>
+                  <label className='flex gap-2'>
                   <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory}/>Kids
-                  </p>
+                  </label>
                </div>
         </div>
 
@@ -109,15 +109,15 @@ const Collection = () => {
          <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '':'hidden'} sm:block`}>
             <p className='mb-3 text-sm font-medium'>TYPE</p>
                <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-                 <p className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubcategory}/>Topwear
-                  </p>
-                  <p className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubcategory}/>Bottomwear
-                  </p>
-                  <p className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubcategory}/>Winterwear
-                  </p>
+                  <label className='flex gap-2'>
+                  <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory}/>Topwear
+                  </label>
+                  <label className='flex gap-2'>
+                  <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}/>Bottomwear
+                  </label>
+                  <label className='flex gap-2'>
+                  <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory}/>Winterwear
+                  </label>
                </div>
         </div>
       
@@ -126,10 +126,12 @@ const Collection = () => {
       {/* Right side */}
        <div className='flex-1'>
 
-          <div className='relative flex justify-between text-base sm:text-2xl mb-4'>
-             <Title text1={'ALL'} text2={'COLLECTION'}/>
+          <div className='relative flex justify-between mb-4 gap-2'>
+            <div className='text-base md:text-2xl'> 
+              <Title text1={'ALL'} text2={'COLLECTION'}/>
+            </div>
              {/* Product sort */}
-             <select onChange={(e=>setSortType(e.target.value))} className='text-sm border-2 border-gray-300 px-4 py-1 rounded-none appearance-none'>
+             <select onChange={(e=>setSortType(e.target.value))} className='text-sm border-2 sm:h-auto sm:w-auto border-gray-300 px-4 py-1 rounded-none appearance-none'>
               <option value="relative">Sort by: Relavent</option> 
               <option value="low-high">Sort by: low to high</option>
               <option value="high-low">Sort by: high to low</option>

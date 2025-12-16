@@ -2,11 +2,13 @@ import { createContext, useEffect, useState } from "react";
 import { products } from "../assets/assets";
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom';
+import  SideCart from '../components/SideCart';
 
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
 
+    const { setCartVisible } = props;
     const currency = '$';
     const delivery_fee = 10;
     const [search, setSearch] = useState('');
@@ -37,6 +39,8 @@ const ShopContextProvider = (props) => {
             cartData[itemId][size] = 1;
        }
        setCartItems(cartData);
+
+       setCartVisible(true);
        
 
     }
