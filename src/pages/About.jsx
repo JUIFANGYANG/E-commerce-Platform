@@ -2,6 +2,8 @@ import React from 'react'
 import Title from '../components/Title'
 import { assets } from '../assets/assets'
 import NewsletterBox from '../components/NewsletterBox'
+import ScrollReveal from '../components/ScrollReveal'
+
 const About = () => {
 
   const ABOUT_CONTENT = {
@@ -23,6 +25,7 @@ const About = () => {
                src={assets.about_img} 
                alt="About us" />
         </div>
+
         <div className='flex flex-col flex-1 justify-center gap-6  text-gray-600 p-5'>
           <p className='font-light'>{ABOUT_CONTENT.paragraph1}</p>
           <p className='font-light'>{ABOUT_CONTENT.paragraph2}</p>
@@ -31,30 +34,42 @@ const About = () => {
         </div>
       </div>
 
+      <ScrollReveal>
       <div className='text-xl text-center mt-20'>
         <Title text1={'WHY'} text2={'CHOOSE US'}/>
       </div>
+      </ScrollReveal>
 
       <div className='w-full flex flex-col md:flex-row mt-10 justify-start p-3'>
+      <ScrollReveal delay={0.1}>
         <div className='text-gray-600 border border-gray-200 px-10 py-12 flex flex-col gap-2 text-sm'>
           <b>Quality Assurance:</b>
           <p>Every piece is crafted with care and tested for durability, ensuring long-lasting quality you can trust in every use.</p>
         </div>
+        </ScrollReveal>
+        <ScrollReveal delay={0.3}>
         <div className='text-gray-600 border border-gray-200 px-10 py-12 flex flex-col gap-2 text-sm'>
           <b>Convenience:</b>
           <p>Effortless shopping with fast delivery, simple navigation, and smooth checkout—made to fit seamlessly into your everyday life.</p>
         </div>
+        </ScrollReveal>
+        <ScrollReveal delay={0.5}>
         <div className='text-gray-600 border border-gray-200 px-10 py-12 flex flex-col gap-2 text-sm'>
           <b>Exceptional Customer Service:</b>
           <p>Our support team is here to help with care, clarity, and quick responses, ensuring your experience is always smooth and stress-free.</p>
         </div>
+        </ScrollReveal>
       </div>
 
       <div>
 
+      <ScrollReveal>
       <NewsletterBox/>
-      </div>
+      </ScrollReveal>
 
+      </div>
+      
+      <ScrollReveal>
       <div id="privacy" className='text-2xl text-center mt-20 pt-10'>
         <Title text1={'PRIVACY'} text2={'POLICY'}/>
       </div>
@@ -62,6 +77,7 @@ const About = () => {
         <p>At Forever, we value your privacy and are committed to protecting your personal information. We collect essential data such as your name, contact details, and order information only to process purchases, provide customer support, and improve your shopping experience. Payment details are handled securely through trusted third-party providers, and we never store full credit card information.</p>
         <p>We may use cookies to enhance website performance and personalize your experience. Your data is never sold and is shared only with partners necessary for payment, shipping, or security. By using our site, you agree to this policy.</p>
       </div>
+      </ScrollReveal>
       
     </div>
   )
