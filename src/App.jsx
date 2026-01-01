@@ -16,6 +16,7 @@ import SideCart from './components/SideCart'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ShopContextProvider from './context/ShopContext';
+import ScrollToTop from './components/ScrollToTop'
 
 
 const App = () => {
@@ -25,13 +26,17 @@ const App = () => {
 
   return (
     <ShopContextProvider setCartVisible={setCartVisible}>
+      <ScrollToTop />
+
+      {/* 購物車 Overlay 與側邊欄邏輯 */}
         {cartVisible && (
         <div onClick={closeCart} className='fixed inset-0 bg-black/40 backdrop-blur-sm z-50'></div>
         )}
         <div className={`fixed bg-white right-0 top-0 bottom-0 z-[60] transition-all duration-300 w-full sm:w-2/5 ${cartVisible? 'translate-x-0':'translate-x-full'}`}>
         <SideCart closeCart={closeCart}/>
       </div>
-      <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+
+      <div className=''>
         <ToastContainer/>
         <Navbar
           cartVisible={cartVisible}

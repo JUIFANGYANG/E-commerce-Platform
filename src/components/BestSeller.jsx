@@ -2,6 +2,7 @@ import React , {useContext, useState, useEffect} from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from './Title';
 import ProductItem from './ProductItem';
+import ScrollReveal from '../components/ScrollReveal'
 
 const BestSeller = () => {
 
@@ -18,13 +19,16 @@ const BestSeller = () => {
   return (
 
     <div className='my-16'>
+      <ScrollReveal>
         <div className='text-center text-3xl py-8'>
           <Title text1={'BEST'} text2={'SELLERS'} className='text-lg'/>
           <p className='w-3/4 m-auto text-xs sm:text-base text-gray-600'>
           Premium materials for a premium experience. Made to fit your lifestyle — simple, stylish, reliable.
           </p>
           </div>
+      </ScrollReveal>
         {/*rendering products */} 
+      <ScrollReveal>  
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
                 {
                 bestSeller.map((item, index)=>(
@@ -32,6 +36,7 @@ const BestSeller = () => {
                 ))
                    }
         </div>
+      </ScrollReveal>
     </div>
   )
 }

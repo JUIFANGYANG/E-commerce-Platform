@@ -3,12 +3,13 @@ import { useParams } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/assets';
 import RelatedProducts from '../components/RelatedProducts';
+import Collapsible from '../components/Collapsible';
+import PageLayout from '../components/PageLayout';
 
 const Product = () => {
 
   const {productId} = useParams();
   const {products, currency, addToCart} = useContext(ShopContext);
-  console.log("🔍 addToCart from context:", addToCart);
 
 
   const [productData,setProductData]= useState(false);
@@ -33,6 +34,7 @@ const Product = () => {
   },[productId, products])
 
   return productData ? (
+    <PageLayout>
     <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
       
       {/* ----Product Data------ */}
@@ -63,41 +65,49 @@ const Product = () => {
                       <p className='pl-2'>(122)</p>
                     </div>
                     <p className='mt-5 text-3xl'>{currency}{productData.price}</p>
-                    <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
+                    <p className='mt-5 text-gray-700 font-light md:w-4/5'>{productData.description}</p>
                     <div className='flex flex-col gap-4 my-8'>
                         <p className='font-bold'>Select Size</p>
                               <div className='flex gap-2'>
                                 {productData.sizes.map((item,index)=>(
-                                  <button onClick={()=>setSize(item)} className={`border py-2 px-4 bg-gray-100 ${item === size ?'border-orange-500':''}`} key={index} >{item}</button>
+                                  <button onClick={()=>setSize(item)} className={`border py-2 px-4 bg-gray-100 ${item === size ?'border-orange-500':''}`} key={index}>{item}</button>
                                 ))}
                               </div>
                     </div>
                     <button onClick={() => addToCart(productData._id, size)} className='bg-black text-white py-3 px-8 text-sm active:bg-gray-700'>ADD TO CART</button>
-                    <hr className='mt-8 sm:w-4/5'/>
-                    <div className='text-sm mt-5 text-gray-500 flex flex-col gap-1'>
+                  
+                    <div className='text-sm mt-5 text-gray-700 font-light flex flex-col gap-1'>
                           <p>100% Original product.</p>
                           <p>Cash on delivery is available on this product.</p>
                           <p>Easy return and exchange policy within 7 days.</p>
                     </div>
            </div>
       </div>
-       {/* --------Description & Review Section （暫時無功能）---------*/}
-       <div className='mt-5'>
-                          <div className='flex'>
-                              <b className='border px-5 py-3 text-sm'>Description</b>
-                              <p className='border px-5 py-3 text-sm'>Review(122)</p>
-                          </div>
-                          <div className='flex flex-col border px-6 py-6 text-sm gap-4 text-gray-500'>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis tempora perferendis suscipit officiis quidem aperiam, repellendus alias, nemo natus, ipsa a fugiat hic officia animi perspiciatis sit. Quo, dolor aut.</p>
-                              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque odit officiis distinctio excepturi omnis vero magni? Enim inventore suscipit sequi obcaecati! Maxime, molestias quas cumque quod possimus error nihil voluptatum.</p>
-                          </div>
+       {/* --------Description & Shipping & Exchanges---------*/}
+       <div className='my-10 flex flex-col gap-4'>
+              <Collapsible title={'Description'} initialOpen={true}>
+                 <p>Designed for everyday comfort and timeless style, this piece is made to move with you through every moment of your day. Crafted with carefully selected materials, it offers a soft feel, reliable durability, and a clean, versatile look that fits effortlessly into any lifestyle.</p>
+                 <p>Whether worn daily or saved for special moments, this item reflects our commitment to quality, simplicity, and thoughtful design that lasts beyond trends.</p>
+              </Collapsible>
+
+              <Collapsible title={'Material & Features'}>
+                  <p>Made from carefully selected, high-quality fabrics, this garment offers a soft touch with breathable comfort for all-day wear. The material is designed to maintain its shape while allowing natural movement, making it suitable for both casual and refined looks. Thoughtful details and clean construction enhance durability and wearability, ensuring this piece feels comfortable, reliable, and timeless through repeated use.</p>
+              </Collapsible>
+              
+              <Collapsible title={'Shipping & Exchanges'}>
+                 <p>We offer free shipping and exchanges on all U.S. orders over $250 and international orders over $280—because your shoe care products should arrive hassle-free. If your order isn’t quite right, returns and exchanges are easy.</p>
+                 <p>Just ensure your items are:<br/>• Unused, undamaged, and in re-sellable condition <br/>• In their original packaging<br/>• Returned within 30 days of delivery</p>
+              </Collapsible>
+
         </div>
         {/* ----------Display Related Product------------- */}
-        <div>
+        <div className='mt-20'>
         <RelatedProducts category={productData.category} subCategory={productData.subCategory}/>
         </div>
     </div>
+    </PageLayout>
   ): <div className='opacity-0'></div>
+  
 }
 
 export default Product

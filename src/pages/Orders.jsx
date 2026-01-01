@@ -1,12 +1,14 @@
 import React, { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
-import Title from '../components/Title';
+import Title from '../components/Title'
+import PageLayout from '../components/PageLayout'
 
 const Orders = () => {
 
   const {products, currency, cartItems, setCartItems} = useContext(ShopContext);
 
   return (
+    <PageLayout>
     <div>
       {/* Title */}
       <div className='text-2xl mt-5'><Title text1={'MY'} text2={'ORDERS'}/></div>
@@ -52,6 +54,7 @@ const Orders = () => {
       </div>
       
     </div>
+    </PageLayout>
   )
 }
 

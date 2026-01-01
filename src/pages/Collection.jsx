@@ -82,7 +82,7 @@ const Collection = () => {
    
 
   return (
-    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t'>
+    <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] '>
       
       {/* fliter options */}
       <div className='min-w-60'>
@@ -94,13 +94,13 @@ const Collection = () => {
             <p className='mb-3 text-sm font-medium'>CATEGORIES </p>
                <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
                  <label className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory}/>Men
+                  <input className='w-3 cursor-pointer' type="checkbox" value={'Men'} onChange={toggleCategory}/>Men
                   </label>
                   <label className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Women'} onChange={toggleCategory}/>Women
+                  <input className='w-3 cursor-pointer' type="checkbox" value={'Women'} onChange={toggleCategory}/>Women
                   </label>
                   <label className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Kids'} onChange={toggleCategory}/>Kids
+                  <input className='w-3 cursor-pointer' type="checkbox" value={'Kids'} onChange={toggleCategory}/>Kids
                   </label>
                </div>
         </div>
@@ -110,13 +110,13 @@ const Collection = () => {
             <p className='mb-3 text-sm font-medium'>TYPE</p>
                <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
                   <label className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Topwear'} onChange={toggleSubCategory}/>Topwear
+                  <input className='w-3 cursor-pointer' type="checkbox" value={'Topwear'} onChange={toggleSubCategory}/>Topwear
                   </label>
                   <label className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}/>Bottomwear
+                  <input className='w-3 cursor-pointer' type="checkbox" value={'Bottomwear'} onChange={toggleSubCategory}/>Bottomwear
                   </label>
                   <label className='flex gap-2'>
-                  <input className='w-3' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory}/>Winterwear
+                  <input className='w-3 cursor-pointer' type="checkbox" value={'Winterwear'} onChange={toggleSubCategory}/>Winterwear
                   </label>
                </div>
         </div>
@@ -130,8 +130,9 @@ const Collection = () => {
             <div className='text-base md:text-2xl'> 
               <Title text1={'ALL'} text2={'COLLECTION'}/>
             </div>
+            <div className='relative flex items-center'>
              {/* Product sort */}
-             <select onChange={(e=>setSortType(e.target.value))} className='text-sm border-2 sm:h-auto sm:w-auto border-gray-300 px-4 py-1 rounded-none appearance-none'>
+             <select onChange={(e=>setSortType(e.target.value))} className='cursor-pointer text-sm underline underline-offset-4 sm:h-auto sm:w-auto pr-6 pl-2 py-2 appearance-none'>
               <option value="relative">Sort by: Relavent</option> 
               <option value="low-high">Sort by: low to high</option>
               <option value="high-low">Sort by: high to low</option>
@@ -141,6 +142,7 @@ const Collection = () => {
              <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-xs">
               ▼
              </span>
+             </div>
           </div>
 
           {/* Map products */}

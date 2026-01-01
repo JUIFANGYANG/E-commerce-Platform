@@ -9,23 +9,16 @@ import ScrollReveal from '../components/ScrollReveal'
 const Home = () => {
   return (
     <div>
-      <Hero/>
-      
-      <ScrollReveal>
+        <Hero/>
+        <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
         <LatestCollection/>
-      </ScrollReveal>
-
-      <ScrollReveal>
         <BestSeller/>
-      </ScrollReveal>
-
-      <ScrollReveal>
         <OurPolicy/>
-      </ScrollReveal>
-      
-      <ScrollReveal delay={0.5}>
+
+      <ScrollReveal delay={0.2}>
         <NewsletterBox/>
       </ScrollReveal>
+      </div>
       
     </div>
   )

@@ -1,6 +1,7 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 import ScrollReveal from '../components/ScrollReveal'
+import {motion} from 'framer-motion'
 
 const OurPolicy = () => {
   return (
@@ -26,6 +27,9 @@ const OurPolicy = () => {
             <p className='text-gray-400'>We provide 24/7 customer support</p>
         </div>
         </ScrollReveal>
+
+
+        
     
     </div>
   )
@@ -34,25 +38,3 @@ const OurPolicy = () => {
 export default OurPolicy
 
 
-//第二層div不用再flex-col了因為他們是區塊元素會自動分行？
-//為何img 要m-auto
-//如下自己寫的
-
-{/* <div className='flex flex-col sm:flex-row justify-between'>
-<div className='flex flex-col py-5 items-center mt-10'>
-    <img className='w-8 mb-5'src={assets.exchange_icon} alt="" />
-    <p className='font-medium'>Easy Exchange Policy</p>
-    <p className='text-gray-600'>We offer hassle free exchange policy.</p>
-</div>
-<div className='flex flex-col py-5 items-center mt-10'>
-    <img className='w-8 mb-5'src={assets.exchange_icon} alt="" />
-    <p className='font-medium'>Easy Exchange Policy</p>
-    <p className='text-gray-600'>We offer hassle free exchange policy.</p>
-</div>
-<div className='flex flex-col py-5 items-center mt-10'>
-    <img className='w-8 mb-5'src={assets.exchange_icon} alt="" />
-    <p className='font-medium'>Easy Exchange Policy</p>
-    <p className='text-gray-600'>We offer hassle free exchange policy.</p>
-</div>
-
-</div> */}

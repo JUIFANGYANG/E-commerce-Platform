@@ -3,7 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
 import { assets } from '../assets/assets';
 import CartTotal from '../components/CartTotal';
-
+import PageLayout from '../components/PageLayout';
 
 const Cart = () => {
 
@@ -33,6 +33,7 @@ const Cart = () => {
 
   
   return (
+    <PageLayout>
     <div className='mt-5 mb-5 flex flex-col'> 
 
       <div className='text-2xl mb-3'>
@@ -88,7 +89,7 @@ const Cart = () => {
       </div> 
       
     </div>
-
+    </PageLayout>
     
   )
 }

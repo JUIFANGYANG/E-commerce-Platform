@@ -2,9 +2,11 @@ import React from 'react'
 import Title from '../components/Title'
 import { assets } from '../assets/assets'
 import NewsletterBox from '../components/NewsletterBox'
+import ScrollReveal from '../components/ScrollReveal'
+
 const Contact = () => {
   return (
-    <div>
+    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
 
       <div className='text-2xl text-center pt-8 border-t'>
         <Title text1={'CONTACT'} text2={'US'}/>
@@ -22,8 +24,9 @@ const Contact = () => {
         </div>
         
       </div>
-
+      <ScrollReveal>
       <NewsletterBox/>
+      </ScrollReveal>
       
     </div>
   )

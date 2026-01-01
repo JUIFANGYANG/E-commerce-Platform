@@ -1,11 +1,33 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
   return (
-    <div className='flex flex-col sm:flex-row border border-gray-400 my-10'>
-      {/* {Hero left side} */}
-      <div className='w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0'> 
+    <div className='w-full h-[400px] sm:h-[80vh] overflow-hidden relative'>
+     
+      {/* {Hero right side} */}
+  
+      <img 
+      className='w-full h-full object-cover' 
+      src={assets.hero_update_img} 
+      alt="Hero Banner" 
+      />
+      <div className='absolute left-0 bottom-0 flex flex-col items-start py-10 px-8 gap-2'>
+        <p className='font-thin py-2 text-white bg-black text-xl md:text-4xl'>Latest Arrivals</p>
+        <Link to='/collection'><p className='font-light text-sm underline underline-offset-2'>SHOP NOW</p>
+        </Link>
+      </div>
+
+    </div>
+  )
+}
+
+export default Hero
+
+
+ {/* {Hero left side} */}
+      {/* <div className='w-full sm:w-1/2 flex items-center justify-center py-10 sm:py-0'> 
             <div className='text-[#414141]'>
                <div className='flex items-center gap-2'>
                  <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
@@ -18,13 +40,4 @@ const Hero = () => {
                 <p className='w-8 md:w-11 h-[2px] bg-[#414141]'></p>
                 </div>
             </div>
-      </div>
-      {/* {Hero right side} */}
-  
-      <img className='w-full sm:w-1/2' src={assets.hero_img} alt="" />
-
-    </div>
-  )
-}
-
-export default Hero
+      </div> */}

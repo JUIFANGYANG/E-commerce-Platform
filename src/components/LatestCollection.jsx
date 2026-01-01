@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from './Title';
 import ProductItem from './ProductItem';
+import ScrollReveal from '../components/ScrollReveal'
 
 const LatestCollection = () => {
 
@@ -12,11 +13,14 @@ const LatestCollection = () => {
 
   return (
     <div className='my-16'>
+      
         <div className='text-center py-8 text-3xl'>
+        <ScrollReveal>
         <Title text1={'LATEST'} text2={'COLLECTION'}/>
         <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>Discover quality, comfort, and style. Feel confident. Feel you. Forever.</p>
+        </ScrollReveal>
         </div>
-
+        <ScrollReveal>
       {/*rendering products */}  
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
           { 
@@ -26,6 +30,7 @@ const LatestCollection = () => {
           ))
           }
         </div>
+        </ScrollReveal>
         
     </div>
   )

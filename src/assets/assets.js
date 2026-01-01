@@ -56,7 +56,10 @@ import p_img52 from './p_img52.png'
 
 
 import logo from './logo.png'
+import logo_update from './logo_update.png'
+import logo_update_v2 from './logo_update_v2.png'
 import hero_img from './hero_img.png'
+import hero_update_img from './hero_update_img.jpg'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
 import dropdown_icon from './dropdown_icon.png'
@@ -76,7 +79,10 @@ import cross_icon from './cross_icon.png'
 
 export const assets = {
     logo,
+    logo_update,
+    logo_update_v2,
     hero_img,
+    hero_update_img,
     cart_icon,
     dropdown_icon,
     exchange_icon,

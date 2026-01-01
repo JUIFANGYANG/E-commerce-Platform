@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { assets, products } from '../assets/assets'
 import { ShopContext } from '../context/ShopContext';
+import { Link} from 'react-router-dom';
+
 
 const SideCart = ({closeCart}) => {
 
@@ -30,7 +32,7 @@ const SideCart = ({closeCart}) => {
   return (
     
     <div className='flex flex-col h-full p-4'>
-            <div className='inline-flex justify-between p-5'><p className=''>{getCartCount()} items</p>
+            <div className='inline-flex justify-between p-5'><p className=''>{getCartCount()} item(s)</p>
                  <img onClick={closeCart} 
                       className='h-4 mt-1 cursor-pointer' 
                       src={assets.cross_icon} 
@@ -106,7 +108,8 @@ const SideCart = ({closeCart}) => {
                          <p className='text-xl px-2 my-2'>Subtotal</p>
                          <p className='text-base px-2 my-2'>{currency} {getCartAmount()}.00</p>
                        </div>
-                       <button className='w-full bg-black font-light text-white py-5'>Checkout</button>
+                       <Link to="/cart"><button onClick={closeCart} className='w-full bg-black font-light text-white py-5'>Checkout</button>
+                       </Link>
                  </div>
 
                  </>
