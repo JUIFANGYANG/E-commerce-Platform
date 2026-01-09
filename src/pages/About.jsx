@@ -115,16 +115,18 @@ const About = () => {
       <div>
   
       <ScrollReveal>
+        <div className='mt-40'>
       <NewsletterBox/>
+        </div>
       </ScrollReveal>
 
       </div>
       
       <ScrollReveal>
-      <div id="privacy" className='text-2xl text-center mt-20 pt-10'>
+      <div id="privacy" className='text-2xl text-center mt-40 pt-10'>
         <Title text1={'PRIVACY'} text2={'POLICY'}/>
       </div>
-      <div className='flex flex-col w-full text-center gap-5 py-5 mb-10 text-sm text-gray-600 p-5'>
+      <div className='flex flex-col w-full text-center gap-5 py-5 mb-20 text-sm text-gray-600 p-5'>
         <p>At Forever, we value your privacy and are committed to protecting your personal information. We collect essential data such as your name, contact details, and order information only to process purchases, provide customer support, and improve your shopping experience. Payment details are handled securely through trusted third-party providers, and we never store full credit card information.</p>
         <p>We may use cookies to enhance website performance and personalize your experience. Your data is never sold and is shared only with partners necessary for payment, shipping, or security. By using our site, you agree to this policy.</p>
       </div>

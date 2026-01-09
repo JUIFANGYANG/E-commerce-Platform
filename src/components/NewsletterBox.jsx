@@ -14,7 +14,7 @@ const NewsletterBox = () => {
       
       <form onSubmit={onSubmitHandler} className='w-full sm:w-1/2 flex items-center gap-3 mx-auto my-6 border pl-3'action="" placeholder='Enter your email'>
         <input className='w-full sm:flex-1 outline-none' type="email"placeholder='Enter your Email'/>
-        <button onClick={()=>{toast.success('Thank you for your subscribe.')}} type='submit' className='bg-black text-white text-sm px-10 py-4'>SUBSCRIBE</button>
+        <button onClick={()=>{toast.success('thank you for your subscription.')}} type='submit' className='bg-black text-white text-sm px-10 py-4'>SUBSCRIBE</button>
       </form>
     
     </div>
