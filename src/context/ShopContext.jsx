@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { products } from "../assets/assets";
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom';
-import  SideCart from '../components/SideCart';
+
 
 export const ShopContext = createContext();
 
@@ -14,6 +14,28 @@ const ShopContextProvider = (props) => {
     const [search, setSearch] = useState('');
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState({});
+    const [cartData, setCartData] = useState([]);
+
+    useEffect(()=> {
+
+        let tempData = [];
+
+        for (const productID in cartItems) {
+          for (const size in cartItems [productID]) {
+            if (cartItems [productID][size]>0) {
+                tempData.push({
+                    _id: productID,
+                    size: size,
+                    quantity: cartItems[productID][size]
+                })
+
+            }
+
+          }
+        }
+        setCartData(tempData)
+
+        },[cartItems])
 
     const addToCart = async (itemId, size) => {
 
@@ -61,9 +83,6 @@ const ShopContextProvider = (props) => {
         return totalCount;
     }
 
-    useEffect(()=>{
-        
-    },[cartItems])
 
     //更改數量
     const updateQuantity = async (itemId, size, quantity) => {
@@ -98,7 +117,7 @@ const ShopContextProvider = (props) => {
         products, currency, delivery_fee,
         search,setSearch,showSearch,setShowSearch,
         cartItems, setCartItems, addToCart,
-        getCartCount, updateQuantity, getCartAmount, navigate
+        getCartCount, updateQuantity, getCartAmount, navigate, cartData, setCartData
     }
 
     return (

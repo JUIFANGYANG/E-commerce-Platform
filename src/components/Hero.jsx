@@ -13,9 +13,9 @@ const Hero = () => {
       src={assets.hero_update_img} 
       alt="Hero Banner" 
       />
-      <div className='absolute left-0 bottom-0 flex flex-col items-start py-10 px-8 gap-2'>
-        <p className='font-thin py-2 text-white bg-black text-xl md:text-4xl'>Latest Arrivals</p>
-        <Link to='/collection'><p className='font-light text-sm underline underline-offset-2'>SHOP NOW</p>
+      <div className='absolute left-0 bottom-0 flex flex-col items-end py-10 px-8 gap-2 mb-2'>
+        <p className='font-thin text-white text-xl md:text-4xl'>Latest Arrivals</p>
+        <Link to='/collection'><p className='font-light text-sm underline underline-offset-2 text-white '>SHOP NOW</p>
         </Link>
       </div>
 

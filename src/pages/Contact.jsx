@@ -3,8 +3,10 @@ import Title from '../components/Title'
 import { assets } from '../assets/assets'
 import NewsletterBox from '../components/NewsletterBox'
 import ScrollReveal from '../components/ScrollReveal'
+import { toast } from 'react-toastify'
 
 const Contact = () => {
+
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
 
@@ -20,7 +22,7 @@ const Contact = () => {
           <p className='text-gray-500'>Tel:(415)555415555-0132 <br/> Email:admin@forever.com</p>
           <p className='font-semibold text-xl text-gray-600'>Careers at Forever</p>
           <p className='text-gray-500'>Learn more about our teams and job openings</p>
-          <button className='border border-black text-black bg-white px-8 py-4 hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
+          <button onClick={()=>{toast.info('Job vacancy is unavailable now. We will update soon!')}} className='border border-black text-black bg-white px-8 py-4 hover:bg-black hover:text-white transition-all duration-500'>Explore Jobs</button>
         </div>
         
       </div>

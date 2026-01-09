@@ -17,7 +17,7 @@ const Navbar = ({setCartVisible}) => {
     <div className={`flex px-4 sm:px-5vw] md:px-[7vw] lg:px-[9vw] items-center justify-between py-2 font-medium sticky bg-white top-0 z-40`}>
       
       <Link to='/' >
-        <img src={assets.logo_update_v2} className='mt-2 w-36 scale-[2.6] cursor-pointer origin-rihgt' alt="Forever_logo" />
+        <img src={assets.logo_update_v2} className='mt-2 w-36 scale-[2.6] pl-5 md:pl-0 cursor-pointer origin-rihgt' alt="Forever_logo" />
       </Link>
 
       <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>

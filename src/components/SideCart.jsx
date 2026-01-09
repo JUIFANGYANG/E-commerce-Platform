@@ -6,27 +6,8 @@ import { Link} from 'react-router-dom';
 
 const SideCart = ({closeCart}) => {
 
-  const {products, currency, cartItems, getCartCount, updateQuantity, getCartAmount, navigate} = useContext(ShopContext);
-  const [cartData, setCartData] = useState([]);
-
-//資料轉換邏輯
- useEffect (() => {
-
-  let tempDate=[];
-  for (const items in cartItems){
-    for (const item in cartItems[items]){
-      if (cartItems[items][item] >0){
-        tempDate.push({
-          _id:items, //商品ID
-          size:item, //尺寸
-          quantity:cartItems[items][item], //數量
-        }
-        );
-      }
-    }
-  }
-  setCartData(tempDate);
- }, [cartItems])
+  const {products, currency, cartItems, getCartCount, updateQuantity, getCartAmount, cartData} = useContext(ShopContext);
+  
       
 
   return (

@@ -3,6 +3,7 @@ import Title from '../components/Title'
 import { assets } from '../assets/assets'
 import NewsletterBox from '../components/NewsletterBox'
 import ScrollReveal from '../components/ScrollReveal'
+import PageLayout from '../components/PageLayout'
 
 const About = () => {
 
@@ -13,56 +14,106 @@ const About = () => {
 };
 
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
+    <div>
 
-      <div className='text-2xl text-center pt-8 border-t'>
-        <Title text1={'ABOUT'} text2={'US'}/>
+      <div className='text-left pt-8 border-t md:mb-20 mb-12 px-5 '>
+        <p className='text-4xl md:text-5xl'>Our Story</p>
       </div>
+
       
-      <div className='my-8 flex flex-col md:flex-row gap-16'>
-        <div className='flex flex-1 mx-auto max-w-[350px] md:mx-0 overflow-hidden'>
-          <img className='w-full h-full object-cover'
-               src={assets.about_img} 
-               alt="About us" />
-        </div>
+   <div className='grid grid-cols-1 md:grid-cols-2'>
 
-        <div className='flex flex-col flex-1 justify-center gap-6  text-gray-600 p-5'>
-          <p className='font-light'>{ABOUT_CONTENT.paragraph1}</p>
-          <p className='font-light'>{ABOUT_CONTENT.paragraph2}</p>
-           <h3 className='text-gray-800 font-semibold'>Our Mission</h3>
-           <p className='font-light'>{ABOUT_CONTENT.mission}</p>
+    {/* Our Story */}
+     <div className='flex flex-col gap-2 mb-20'>
+        <img 
+            src={assets.about_img01} 
+            className='w-full h-[450px] object-cover' // 建議加上高度與 object-cover
+            alt="Our Story" 
+        />
+        <div className='flex flex-col gap-1 p-4'>
+            <p className='text-sm font-semibold'>About Us</p>
+            <p className='text-sm text-gray-600'>At Forever we make elevated footwear using modern techniques coupled with old-school materials, then offer them to you, minus the markups.</p>
         </div>
-      </div>
+     </div> 
+
+    {/* Fair Pricing */}
+     <div className='flex flex-col gap-2 mb-20'>
+        <img 
+            src={assets.about_img02} 
+            className='w-full h-[450px] object-cover' 
+            alt="Fair Pricing" 
+        />
+        <div className='flex flex-col gap-1 p-4'>
+            <p className='text-sm font-semibold'>Fair Pricing</p>
+            <p className='text-sm text-gray-600'>Major brands in our industry markup their products 8-10x the actual cost. We do things differently. To make quality accessible, we've built relationships with the best manufacturers and sell directly to you.</p>
+        </div>
+     </div>
+
+   </div>
+      
+    <div className='grid grid-cols-1 md:grid-cols-2'>
+
+    {/* Our Materials */}
+     <div className='flex flex-col gap-2 mb-20'>
+        <img 
+            src={assets.about_img04} 
+            className='w-full h-[450px] object-cover'
+            alt="Our Story" 
+        />
+        <div className='flex flex-col gap-1 p-4'>
+            <p className='text-sm font-semibold'>Our Materials</p>
+            <p className='text-sm text-gray-600'>We only work with high-quality, enduring materials, from custom outsoles to ethically sourced Italian leathers. Our cloth are made for everyday wear, forever.</p>
+        </div>
+     </div> 
+
+    {/* Unusual Suspect */}
+     <div className='flex flex-col gap-2 mb-20'>
+        <img 
+            src={assets.about_img03} 
+            className='w-full h-[450px] object-cover' 
+            alt="Fair Pricing" 
+        />
+        <div className='flex flex-col gap-1 p-4'>
+            <p className='text-sm font-semibold'>Fair Pricing</p>
+            <p className='text-sm text-gray-600'>In 2018, a then 29-year-old Scott Gabrielson left his job at a non-profit and moved to England to start a business. With no fashion, retail, or start-up experience, Scott relied on his passion for balanced design and quality, comfortable footwear to launch Forever.</p>
+        </div>
+     </div>
+
+   </div>
+      
+
+    
 
       <ScrollReveal>
-      <div className='text-xl text-center mt-20'>
-        <Title text1={'WHY'} text2={'CHOOSE US'}/>
+      <div className='text-left pt-8 mb-5 md:mb-10 px-5 '>
+        <p className='text-4xl md:text-5xl'>Why Choose Us</p>
       </div>
       </ScrollReveal>
 
       <div className='w-full flex flex-col md:flex-row mt-10 justify-start p-3'>
       <ScrollReveal delay={0.1}>
-        <div className='text-gray-600 border border-gray-200 px-10 py-12 flex flex-col gap-2 text-sm'>
+        <div className='text-gray-600 border-r px-10 py-12 flex flex-col gap-2 text-sm'>
           <b>Quality Assurance:</b>
           <p>Every piece is crafted with care and tested for durability, ensuring long-lasting quality you can trust in every use.</p>
         </div>
         </ScrollReveal>
         <ScrollReveal delay={0.3}>
-        <div className='text-gray-600 border border-gray-200 px-10 py-12 flex flex-col gap-2 text-sm'>
+        <div className='text-gray-600 border-r px-10 py-12 flex flex-col gap-2 text-sm'>
           <b>Convenience:</b>
           <p>Effortless shopping with fast delivery, simple navigation, and smooth checkout—made to fit seamlessly into your everyday life.</p>
         </div>
         </ScrollReveal>
         <ScrollReveal delay={0.5}>
-        <div className='text-gray-600 border border-gray-200 px-10 py-12 flex flex-col gap-2 text-sm'>
+        <div className='text-gray-600  px-10 py-12 flex flex-col gap-2 text-sm'>
           <b>Exceptional Customer Service:</b>
           <p>Our support team is here to help with care, clarity, and quick responses, ensuring your experience is always smooth and stress-free.</p>
         </div>
         </ScrollReveal>
       </div>
-
+      
+   <PageLayout>
       <div>
-
+  
       <ScrollReveal>
       <NewsletterBox/>
       </ScrollReveal>
@@ -78,6 +129,7 @@ const About = () => {
         <p>We may use cookies to enhance website performance and personalize your experience. Your data is never sold and is shared only with partners necessary for payment, shipping, or security. By using our site, you agree to this policy.</p>
       </div>
       </ScrollReveal>
+  </PageLayout>
       
     </div>
   )

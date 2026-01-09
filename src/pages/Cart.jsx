@@ -7,29 +7,9 @@ import PageLayout from '../components/PageLayout';
 
 const Cart = () => {
 
-  const {products, currency, cartItems, getCartCount, updateQuantity, navigate} = useContext(ShopContext);
+  const {products, currency, cartItems, getCartCount, updateQuantity, navigate, cartData} = useContext(ShopContext);
   //這裡的cartDate跟contexte裡的不同，用於整理後準備渲染。
-  const [cartData, setCartData] = useState([]);
-
   
-
-  useEffect(()=>{
-  
-    const tempData = [];
-    for(const items in cartItems){
-      for (const item in cartItems[items]){
-         if (cartItems[items][item]>0) {
-          tempData.push({
-            _id:items,
-            size:item,
-            quantity:cartItems[items][item]
-          })
-         }
-      }
-    }
-    setCartData(tempData);
-  },[cartItems])
-
 
   
   return (
