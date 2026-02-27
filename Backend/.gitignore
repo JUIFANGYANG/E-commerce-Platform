@@ -1,0 +1,13 @@
+# 忽略後端的套件資料夾
+node_modules/
+
+# 忽略環境變數設定檔（內含資料庫密碼、API 金鑰）
+.env
+
+# 忽略日誌檔案
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 忽略 Mac 系統產生的隱藏檔
+.DS_Store
