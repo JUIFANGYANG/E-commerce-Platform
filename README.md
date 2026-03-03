@@ -6,7 +6,7 @@ This is a fully integrated full-stack e-commerce platform, built from front-end 
 
 Throughout development, I successfully tackled cross-platform deployment challenges, including environment configuration and data synchronization. This project demonstrates my ability to take a product from development to production-ready deployment.
 
-🔗 ## Live Demo
+🔗 Live Demo
 https://e-commerce-forever-silk.vercel.app/
 
 ## Tech Stack
@@ -40,7 +40,7 @@ Configured environment variables securely (VITE_ / process.env) to protect sensi
 
 Diagnosed and resolved CI/CD conflicts and module dependency issues during deployment.
 
-🌟 ## Key Features
+## Key Features🌟 
 
 Dynamic Product System – Frontend retrieves real-time product data from MongoDB via API.
 
@@ -50,7 +50,7 @@ Admin Panel – Allows administrators to create/edit products and upload images 
 
 Fully Responsive Design – Optimized layout and touch experience across Desktop, Tablet, and Mobile devices.
 
-## Engineering Mindset
+## Mindset
 
 Beyond implementing features, I focused on solving architectural challenges and improving scalability:
 
