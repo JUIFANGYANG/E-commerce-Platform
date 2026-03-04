@@ -6,8 +6,13 @@ This is a fully integrated full-stack e-commerce platform, built from front-end 
 
 Throughout development, I successfully tackled cross-platform deployment challenges, including environment configuration and data synchronization. This project demonstrates my ability to take a product from development to production-ready deployment.
 
-🔗 Live Demo
-https://e-commerce-forever-silk.vercel.app/
+## 🔗 Project Architecture & Live Links
+
+| Component | Live Link | Tech Highlights |
+| :--- | :--- | :--- |
+| 🛒 **Frontend Store** | [Visit Site](https://e-commerce-forever-silk.vercel.app/) | React, Tailwind CSS, Context API |
+| ⚙️ **Admin Panel** | [Access Dashboard](https://e-commerce-admin-plum.vercel.app/) | Cloudinary Upload, Product Management |
+| 🧠 **Backend API** | [API Endpoint](https://e-commerce-backend-two-tau.vercel.app/) | Express, JWT Auth, MongoDB |
 
 ## Tech Stack
 -Frontend (Vercel)
