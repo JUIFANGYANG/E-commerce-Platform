@@ -13,10 +13,10 @@ Throughout development, I successfully tackled cross-platform deployment challen
 | 🛒 **Frontend Store** | [Visit Site](https://e-commerce-forever-silk.vercel.app/) | React, Tailwind CSS, Context API |
 | ⚙️ **Admin Panel** | [Access Dashboard](https://e-commerce-admin-plum.vercel.app/) | Cloudinary Upload, Product Management |
 | 🧠 **Backend API** | [API Endpoint](https://e-commerce-backend-two-tau.vercel.app/) | Express, JWT Auth, MongoDB |
-### 🔑 Admin Access (For Demo)
+### Admin Access (For Demo)
 - **URL**: [Admin Panel Link]
-- **Account**: `admin@example.com`
-- **Password**: `123456`
+- **Account**: `admin@forever.com`
+- **Password**: `qwerty123`
 *Note: Feel free to add/delete products to test the Cloudinary & MongoDB integration.*
 
 ## Tech Stack
