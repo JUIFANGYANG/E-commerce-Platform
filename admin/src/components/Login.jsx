@@ -8,6 +8,10 @@ const Login = ({setToken}) => {
   const [email, setEmail] = useState('')
   const [password,setPassword] = useState('')
 
+const fillTestAccount = () => {
+  setEmail('admin@forever.com'); // 替換成你的測試帳號
+  setPassword('qwerty123');        // 替換成你的測試密碼
+};
 
   const onSubmitHandler = async (e) => {
 
@@ -38,7 +42,7 @@ const Login = ({setToken}) => {
   return (
 
 
-    <div className="min-h-screen flex justify-center items-center w-full">
+    <div className="min-h-screen flex justify-center items-center w-full flex-col">
       <div className="bg-white shadow-md rounded-lg px-8 py-6 max-w-md">
         <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
 
@@ -61,9 +65,24 @@ const Login = ({setToken}) => {
               placeholder="Enter your password"
             />
           </div>
+          <div className="text-left mb-2">
+          <button
+            type="button"
+            onClick={fillTestAccount}
+            className="text-sm text-gray-500 hover:text-black hover:underline transition"
+          >
+            Click here to use Test Account (Admin Demo)
+          </button>
+        </div>
           <button className="cursor-pointer mt-2 w-full py-2 px-4 rounded-md text-white bg-black" type="submit">Login</button>
+        
         </form>
       </div>
+      <div className="mt-4 text-center">
+  </div>
+
+
+
     </div>
   );
 };
