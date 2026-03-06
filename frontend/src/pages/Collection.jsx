@@ -3,6 +3,7 @@ import { ShopContext } from '../context/ShopContext'
 import { assets } from '../assets/assets';
 import Title from '../components/Title';
 import ProductItem from '../components/ProductItem';
+import Loader from '../components/Loader';
 
 const Collection = () => {
 
@@ -11,7 +12,8 @@ const Collection = () => {
     const [filterProducts,setFilterProducts]= useState([]);
     const [category, setCategory] = useState([]);
     const [subCategory, setSubCategory] = useState([]);
-    const [sortType, setSortType] = useState('relavent')
+    const [sortType, setSortType] = useState('relative')
+    const [loading, setloading] = useState(true);
 
     const toggleCategory = (e) => {
 
@@ -68,10 +70,16 @@ const Collection = () => {
       }
     }
 
-    // useEffect(()=>{
-    //   setFilterProducts(products)
-    // },[])
-    //初始proructs是空的>filterproducts為空陣列
+    useEffect(()=>{
+
+      if (products && products.length >0) {
+        setloading(false);
+      }
+      const timer = setTimeout(()=> setloading(false), 5000)
+      return () => clearTimeout(timer)
+
+    },[products]);
+
 
     useEffect(()=>{
       applyFilter();
@@ -80,8 +88,11 @@ const Collection = () => {
     useEffect(()=>{
       sortProduct()
     },[sortType])
+
+    if (loading) {
+      return <Loader/>
+    }
    
-console.log("頁面接收到的產品數量:", products.length);
   return (
     <div className='flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] '>
       
